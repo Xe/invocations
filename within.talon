@@ -1,3 +1,7 @@
+not app: slack
+-
+tag(): user.messaging
+
 proxy (katy|katie) <user.text> [over]: 
     insert("Cadey\\ ")
     insert(text)
