@@ -6,8 +6,9 @@ state context: " ctx "
 state any: " any "
 
 return raised result: "return &result"
-return raised result and null: "return &result, nil"
-return null and error: "return nil, err"
+return raised result and (null|nil): "return &result, nil"
+return result and (null|nil): "return result, nil"
+return (nil|null) and error: "return nil, err"
 
 raise <user.cursorless_target>:
     user.cursorless_command("setSelectionBefore", cursorless_target)
