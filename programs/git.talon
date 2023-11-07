@@ -13,6 +13,9 @@ great calzone journey <user.text> [over]:
 great calzone publish: 
     insert("git push")
     key(enter)
+great calzone integrate:
+    insert("git pull")
+    key(enter)
 great calzone status:
     insert("git status")
     key(enter)

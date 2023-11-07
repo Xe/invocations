@@ -18,3 +18,9 @@ declare <user.text> to be:
     insert(user.formatted_text(text, "PRIVATE_CAMEL_CASE"))
     insert(" := ")
     sleep(100ms)
+
+public function <user.text> [over]:
+    insert("func ")
+    insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
+    insert("(")
+    sleep(100ms)
