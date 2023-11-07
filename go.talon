@@ -6,13 +6,26 @@ state context: " ctx "
 state any: " any "
 
 return raised result: "return &result"
+return raised result and null: "return &result, nil"
+return null and error: "return nil, err"
 
-raise <user.cursorless_target>: insert("&")
-lower <user.cursorless_target>: insert("*")
+raise <user.cursorless_target>:
+    user.cursorless_command("setSelectionBefore", cursorless_target)
+    insert("&")
+lower <user.cursorless_target>:
+    user.cursorless_command("setSelectionBefore", cursorless_target)
+    insert("*")
+
+name <user.text>:
+    insert(user.formatted_text(text, "PRIVATE_CAMEL_CASE"))
 
 [state] get: " <- "
 
 [state] package (man|main): "package main"
+[state] package <user.text>:
+    insert("package ")
+    insert(user.formatted_text(text, "smash"))
+    insert("\n\n")
 
 declare <user.text> to be:
     insert(user.formatted_text(text, "PRIVATE_CAMEL_CASE"))
