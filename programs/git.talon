@@ -11,6 +11,9 @@ great calzone commit:
 great calzone clone:
     insert("git clone ")
 
+great calzone fuck go back:
+    insert("git reset --hard")
+
 great calzone diverge <user.text> [over]:
     insert("git checkout -b Xe/")
     insert(user.formatted_text(text, "kebab"))
