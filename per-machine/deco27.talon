@@ -23,7 +23,7 @@ fizz praise:
     insert("@fizz")
     sleep(100ms)
     key(enter)
-    insert("praise ")
+    insert("praise @")
 
 # Update fizz changelog
 fizz changelog <user.text> [over]:
