@@ -1,6 +1,9 @@
-great calzone (add|ad): 
+great calzone (add|ad):
     insert("git add .")
     key(enter)
+
+great calzone pick:
+    insert("git add ")
 
 great calzone commit: 
     insert("git commit -s")
@@ -14,9 +17,9 @@ great calzone clone:
 great calzone fuck go back:
     insert("git reset --hard")
 
-great calzone diverge <user.text> [over]:
+great calzone diverge [<user.text> [over]]:
     insert("git checkout -b Xe/")
-    insert(user.formatted_text(text, "kebab"))
+    insert(user.formatted_text(text or "", "kebab"))
 
 great calzone journey [<user.text>] [over]:
     insert("git commit -sm '")
