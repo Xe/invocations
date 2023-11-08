@@ -1,5 +1,6 @@
 code.language: go
 -
+
 state context: " ctx "
 [state] context (are you|argue): " ctx context.Context "
 
@@ -31,7 +32,6 @@ name <user.text>:
 declare <user.text> to be:
     insert(user.formatted_text(text, "PRIVATE_CAMEL_CASE"))
     insert(" := ")
-    sleep(100ms)
 
 function main:
     insert("func main() {\n")
