@@ -33,6 +33,13 @@ declare <user.text> to be:
     insert(" := ")
     sleep(100ms)
 
+function main:
+    insert("func main() {\n")
+    sleep(100ms)
+
+method <user.letter> [<user.go_pointer>] [<user.go_visibility>] <user.text> [<user.go_visibility>] named <user.text> [over]:
+    user.go_method(go_pointer or "", letter, go_visibility_1 or "public", text_1, go_visibility_2 or "public", text_2)
+
 public function <user.text> [over]:
     insert("func ")
     insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
