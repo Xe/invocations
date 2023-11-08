@@ -18,10 +18,11 @@ great calzone diverge <user.text> [over]:
     insert("git checkout -b Xe/")
     insert(user.formatted_text(text, "kebab"))
 
-great calzone journey <user.text> [over]:
+great calzone journey [<user.text>] [over]:
     insert("git commit -sm '")
-    insert(text)
+    insert(text or "")
     insert("'")
+    key(left)
 
 great calzone publish: 
     insert("git push")
