@@ -22,7 +22,6 @@ great calzone journey <user.text> [over]:
     insert("git commit -sm '")
     insert(text)
     insert("'")
-    key(enter)
 
 great calzone publish: 
     insert("git push")

@@ -57,6 +57,50 @@ class UserActions:
     def code_private_function(text: str):
         base_function(text, "PRIVATE_CAMEL_CASE")
 
+    def code_block():
+        actions.user.insert_between("{\n", "")
+
+    def code_state_if():
+        actions.user.insert_between(" if ", " {")
+
+    def code_state_else_if():
+        actions.user.insert_between(" else if ", " {")
+
+    def code_state_else():
+        actions.insert(" else ")
+        actions.user.code_block()
+
+    def code_state_while():
+        actions.user.code_state_for()
+
+    def code_state_infinite_loop():
+        actions.insert("for ")
+        actions.user.code_block()
+
+    def code_state_for():
+        actions.user.insert_between("for ", " {")
+
+    def code_state_for_each():
+        actions.user.insert_between("for _, ", " := range  {")
+
+    def code_state_switch():
+        actions.user.insert_between("switch ", " {")
+
+    def code_state_case():
+        actions.user.insert_between("case ", ":")
+
+    def code_state_go_to():
+        actions.insert("goto ")
+
+    def code_state_return():
+        actions.insert("return ")
+
+    def code_state_break():
+        actions.insert("break")
+
+    def code_next():
+        actions.insert("continue")
+
     def code_operator_subscript():
         actions.user.insert_between("[", "]")
 
