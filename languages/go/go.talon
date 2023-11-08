@@ -43,5 +43,5 @@ method <user.letter> [<user.go_pointer>] [<user.go_visibility>] <user.text> [ove
 public function <user.text> [over]:
     insert("func ")
     insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
-    insert("(")
+    insert(" ( ")
     sleep(100ms)

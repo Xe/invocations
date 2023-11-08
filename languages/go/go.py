@@ -21,4 +21,4 @@ class GoActions:
         """
         type_name = actions.user.formatted_text(type_name, "PUBLIC_CAMEL_CASE" if type_public == "public" else "PRIVATE_CAMEL_CASE")
         method_name = actions.user.formatted_text(method_name, "PUBLIC_CAMEL_CASE" if method_public == "public" else "PRIVATE_CAMEL_CASE")
-        actions.insert("func ({} {} {}) {}(".format(letter, go_pointer or "", type_name, method_name))
+        actions.insert("func ( {} {} {} ) {} (".format(letter, go_pointer or "", type_name, method_name))
