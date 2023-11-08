@@ -46,8 +46,8 @@ class UserActions:
         actions.auto_insert("// ")
 
     def code_default_function(text: str):
-        if text == "main":
-            actions.user.code_private_function(text)
+        if text == "main" or text == "mane":
+            actions.user.code_private_function("main")
         else:
             actions.user.code_public_function(text)
 
