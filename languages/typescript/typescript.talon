@@ -6,6 +6,40 @@ code.language: typescriptreact
 
 state as: "as "
 
+(method|meth) <user.text> [over]:
+    insert(user.formatted_text(text, "PRIVATE_CAMEL_CASE"))
+    insert("(")
+    insert(") {}")
+    key(left:3)
+
+(method|meth) <user.text> (return|returning) <user.code_type> [over]:
+    insert(user.formatted_text(text_1, "PRIVATE_CAMEL_CASE"))
+    insert("(")
+    insert("): ")
+    insert(code_type)
+    insert(" {}")
+    key(left)
+    key(enter)
+
+(method|meth) <user.text> (return|returning) <user.text> [over]:
+    insert(user.formatted_text(text_1, "PRIVATE_CAMEL_CASE"))
+    insert("(")
+    insert("): ")
+    insert(user.formatted_text(text_2, "PUBLIC_CAMEL_CASE"))
+    insert(" {}")
+    key(left)
+    key(enter)
+
+[state] async <user.cursorless_target>:
+    user.cursorless_command("setSelectionBefore", cursorless_target)
+    insert("async ")
+
+(wrap|rap) promise <user.cursorless_target>:
+    user.cursorless_command("setSelectionBefore", cursorless_target)
+    insert("Promise<")
+    user.cursorless_command("setSelectionAfter", cursorless_target)
+    insert(">")
+
 snake member <user.text> [over]:
     insert(user.formatted_text(text, "SNAKE_CASE"))
 
