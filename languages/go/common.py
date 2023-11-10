@@ -7,6 +7,27 @@ code.language: go
 """
 
 
+ctx.lists["user.code_type"] = {
+    "bool": "bool",
+    "boolean": "bool",
+    "byte": "byte",
+    "bite": "byte",
+    "number": "int",
+    "integer": "int",
+    "int": "int",
+    "int eight": "int8",
+    "int sixteen": "int16",
+    "int thirty two": "int32",
+    "int sixty four": "int64",
+    "float": "float64",
+    "float thirty two": "float32",
+    "float sixty four": "float64",
+    "character": "rune",
+    "rune": "rune",
+    "string": "string",
+}
+
+
 def base_function(text: str, visibility: str):
     """Inserts a public function definition, this assumes a lot about how your editor works"""
     result = "func {}() {{\n\n}}".format(

@@ -33,6 +33,35 @@ declare <user.text> to be:
     insert(user.formatted_text(text, "PRIVATE_CAMEL_CASE"))
     insert(" := ")
 
+[state] var <user.text> [over]:
+    insert("var ")
+    insert(user.formatted_text(text, "PRIVATE_CAMEL_CASE"))
+    insert(" ")
+
+[state] const <user.text> [over]:
+    insert("const ")
+    insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
+    insert(" ")
+
+[state] type <user.text> [over]:
+    insert("type ")
+    insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
+    insert(" ")
+
+of type <user.code_type>:
+    insert(" ")
+    insert(user.code_type)
+
+of type <user.text> [over]:
+    insert(" ")
+    insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
+
+of type <user.text> dot <user.text> [over]:
+    insert(" ")
+    insert(user.formatted_text(text_1, "all down"))
+    insert(".")
+    insert(user.formatted_text(text_2, "PUBLIC_CAMEL_CASE"))
+
 function main:
     insert("func main() {\n")
     sleep(100ms)
