@@ -30,9 +30,8 @@ state as: "as "
     key(left)
     key(enter)
 
-[state] async <user.cursorless_target>:
-    user.cursorless_command("setSelectionBefore", cursorless_target)
-    insert("async ")
+[state] async <user.cursorless_destination>:
+    user.cursorless_insert(cursorless_destination, "async")
 
 (wrap|rap) promise <user.cursorless_target>:
     user.cursorless_command("setSelectionBefore", cursorless_target)

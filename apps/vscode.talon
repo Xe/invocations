@@ -13,3 +13,6 @@ blog conversation <user.text> [over]:
     insert(text)
     insert("\n")
     insert("</XeblogConv>")
+
+word <user.word> (and <user.word>)* <user.cursorless_destination>:
+    user.cursorless_insert(cursorless_destination, word_list)

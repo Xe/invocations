@@ -1,10 +1,9 @@
 export default function Foo() {
   return (
     <>
-        <Header></Header>
-        <Footer />
-
-        <Footer />
+      <Header />
+      <Heading>this is some example text</Heading>
+      <Footer />
     </>
   );
 }
