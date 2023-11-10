@@ -57,6 +57,10 @@ optional member <user.text> [over]:
     insert(code_type)
     insert("[]")
 
+(slice|array) of <user.text> [over]:
+    insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
+    insert("[]")
+
 of type [<user.code_type> [over]]: 
     insert(": ")
     insert(code_type or "")
