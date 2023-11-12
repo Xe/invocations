@@ -1,7 +1,7 @@
 code.language: go
 -
 
-state context: " ctx "
+[state] context: " ctx "
 [state] context (are you|argue): " ctx context.Context "
 
 state any: " any "
@@ -48,16 +48,19 @@ declare <user.text> to be:
     insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
     insert(" ")
 
-of type <user.code_type>:
+of type [<user.go_pointer>] <user.code_type>:
     insert(" ")
-    insert(user.code_type)
+    insert(go_pointer or "")
+    insert(code_type)
 
-of type <user.text> [over]:
+of type [<user.go_pointer>] <user.text> [over]:
     insert(" ")
+    insert(go_pointer or "")
     insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
 
-of type <user.text> dot <user.text> [over]:
+of type [<user.go_pointer>] <user.text> dot <user.text> [over]:
     insert(" ")
+    insert(go_pointer or "")
     insert(user.formatted_text(text_1, "all down"))
     insert(".")
     insert(user.formatted_text(text_2, "PUBLIC_CAMEL_CASE"))

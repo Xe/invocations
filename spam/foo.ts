@@ -1,7 +1,11 @@
 class ThisIsANameForSomethingIGuess {
     constructor() {}
 
-    async doSomething(): Promise<string> {
-        return "something";
+    async doSomething(input: string): Promise<string> {
+        return input;
+    }
+
+    doAnotherThing(): string {
+        return "hello";
     }
 }
