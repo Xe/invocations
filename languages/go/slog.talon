@@ -6,4 +6,3 @@ slog {user.go_slog_level} [<user.text> [over]]:
     insert('("')
     insert(text or "")
     insert('")')
-    key(enter)

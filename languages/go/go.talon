@@ -24,7 +24,7 @@ name <user.text>:
 [state] get: " <- "
 
 [state] package (man|main): "package main"
-[state] package <user.text>:
+[state] package <user.text> [over]:
     insert("package ")
     insert(user.formatted_text(text, "smash"))
     insert("\n\n")
@@ -71,9 +71,3 @@ function main:
 
 (method|meth) <user.letter> [<user.go_pointer>] [<user.go_visibility>] <user.text> [over] [<user.go_visibility>] named <user.text> [over]:
     user.go_method(go_pointer or "", letter, go_visibility_1 or "public", text_1, go_visibility_2 or "public", text_2)
-
-public function <user.text> [over]:
-    insert("func ")
-    insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
-    insert(" ( ")
-    sleep(100ms)
