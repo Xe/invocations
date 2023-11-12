@@ -1,0 +1,6 @@
+list: user.go_slog_level
+-
+info: Info
+debug: Debug
+warn: Warn
+error: Error

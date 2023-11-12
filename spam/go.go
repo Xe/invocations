@@ -8,5 +8,10 @@ func main() {
 
 	value := 2
 
+	var value  complex64 = 1 + 2i
+	var otherValue int64 = 2
+
 	fmt.Println(value)
+
+	slog.Debug("water water water")
 }
