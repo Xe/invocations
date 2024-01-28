@@ -1,6 +1,7 @@
 code.language: go
 -
 
+tag(): user.code_comment_line
 tag(): user.code_comment_block_c_like
 tag(): user.code_comment_documentation
 
@@ -15,7 +16,7 @@ tag(): user.code_operators_lambda
 tag(): user.code_operators_math
 tag(): user.code_operators_pointer
 
-settings:
+settings():
     user.code_private_function_formatter = "PRIVATE_CAMEL_CASE"
     user.code_protected_function_formatter = "PUBLIC_CAMEL_CASE"
     user.code_public_function_formatter = "PUBLIC_CAMEL_CASE"

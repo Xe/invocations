@@ -1,8 +1,12 @@
 code.language: go
 -
 
-[state] context: " ctx "
-[state] context (are you|argue): " ctx context.Context "
+[state] cats: " ctx "
+[state] [context|cats] (are you|argue): " ctx context.Context "
+
+[state] [air|oops]: " err "
+[state] [air|oops] (are you|argue): " err error "
+[state] boom: " error "
 
 state any: " any "
 
@@ -28,6 +32,8 @@ name <user.text>:
     insert("package ")
     insert(user.formatted_text(text, "smash"))
     insert("\n\n")
+
+to be: " := "
 
 declare <user.text> to be:
     insert(user.formatted_text(text, "PRIVATE_CAMEL_CASE"))

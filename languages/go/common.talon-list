@@ -2,11 +2,15 @@ list: user.code_type
 code.language: go
 -
 
+any: any
+
 bool: bool
 boolean: bool
 
 byte: byte
 bite: byte
+
+oops: error
 
 complex sixty four: complex64
 complex six four: complex64
@@ -29,3 +33,19 @@ character: rune
 rune: rune
 
 string: string
+
+int sixty four: int64
+int sixty four: int64
+you int sixty four: uint64
+int thirty two: int32
+you int thirty two: uint32
+int sixteen: int16
+you int sixteen: uint16
+int eight: int8
+you int eight: uint8
+float thirty two: float32
+float sixty four: float64
+complex sixty four: complex64
+complex one twenty eight: complex128
+you int pointer: uintptr
+you int: uint

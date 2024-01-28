@@ -43,6 +43,9 @@ class UserActions:
     def code_insert_is_not_null():
         actions.auto_insert(" != nil ")
 
+    def code_comment_line_prefix():
+        actions.auto_insert("// ")
+
     def code_comment_documentation():
         """inserts godoc syntax"""
         actions.key("up")
