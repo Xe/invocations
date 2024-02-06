@@ -4,9 +4,10 @@ code.language: go
 [state] cats: " ctx "
 [state] [context|cats] (are you|argue): " ctx context.Context "
 
-[state] [air|oops]: " err "
-[state] [air|oops] (are you|argue): " err error "
-[state] boom: " error "
+[state] oops (are you|argue): " err error "
+oops: " err "
+boom: " error "
+swipe: " , "
 
 state any: " any "
 
