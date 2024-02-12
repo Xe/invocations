@@ -29,7 +29,20 @@ code.language: protobuf
 of type {user.protobuf_type}:
     insert("{protobuf_type} ")
 
-[state] (field|value) [of type] {user.protobuf_type} [named] <user.text> number <user.number_string> [over]:
+of type <user.text> [over]:
+    insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
+
+named <user.text> [over]:
+    insert(" ")
+    insert(user.formatted_text(text, "SNAKE_CASE"))
+    insert(" ")
+
+number <user.number_string>:
+    insert(" = ")
+    insert(number_string)
+    insert(";\n")
+
+[state] (field|value) [of type] {user.protobuf_type} [named] <user.text> [over] number <user.number_string> [over]:
     insert(protobuf_type)
     insert(" ")
     insert(user.formatted_text(text, "SNAKE_CASE"))
