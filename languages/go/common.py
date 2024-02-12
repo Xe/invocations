@@ -17,13 +17,8 @@ def base_function(text: str, visibility: str):
             text, visibility
         )
     )
-    actions.user.paste(result)
-    actions.edit.left()
-    actions.edit.left()
-    actions.edit.left()
-    actions.edit.left()
-    actions.edit.left()
-    actions.edit.left()
+
+    actions.user.insert_between(f"func {text}() {{\n", "")
 
 
 @ctx.action_class("user")
@@ -63,6 +58,12 @@ class UserActions:
     def code_private_function(text: str):
         base_function(text, "PRIVATE_CAMEL_CASE")
 
+    def code_insert_function(text: str, selection: str):
+        actions.insert(text)
+        actions.insert("()")
+        actions.key("left")
+        actions.insert(selection)
+
     def code_block():
         actions.user.insert_between("{\n", "")
 
@@ -101,11 +102,15 @@ class UserActions:
     def code_state_return():
         actions.insert("return ")
 
-    def code_state_break():
-        actions.insert("break")
+    def code_break():
+        actions.insert("break ")
 
     def code_next():
         actions.insert("continue")
+
+    def code_import():
+        actions.user.insert_between("import (", ")")
+        actions.insert("\n")
 
     def code_operator_subscript():
         actions.user.insert_between("[", "]")

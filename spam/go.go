@@ -17,4 +17,5 @@ func main() {
 	fmt.Println(value)
 
 	slog.Debug("water water water") // this is a test
+	slog.Debug("water water water")
 }

@@ -2,6 +2,8 @@ code.language: go
 -
 
 [state] cats: " ctx "
+[state] context: "context"
+[state] context type: "context.Context"
 [state] [context|cats] (are you|argue): " ctx context.Context "
 
 [state] oops (are you|argue): " err error "
@@ -9,12 +11,21 @@ oops: " err "
 boom: " error "
 swipe: " , "
 
+fucking hell:
+    insert_between("\nif err != nil { \n ", "\n }\n\n")
+
+fuck it:
+    insert("\nif err != nil{\nreturn err\n}\n\n")
+
+fuck that:
+    insert("\nif err != nil{\nreturn nil, err\n}\n\n")
+
 state any: " any "
 
 return raised result: "return &result"
-return raised result and (null|nil): "return &result, nil"
-return result and (null|nil): "return result, nil"
-return (nil|null) and error: "return nil, err"
+return raised result and (null|nil|no): "return &result, nil"
+return result and (null|nil|no): "return result, nil"
+return (nil|null|no) and error: "return nil, err"
 
 raise <user.cursorless_target>:
     user.cursorless_command("setSelectionBefore", cursorless_target)
