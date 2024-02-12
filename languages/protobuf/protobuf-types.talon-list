@@ -1,0 +1,29 @@
+list: user.protobuf_type
+-
+
+string: string
+bytes: bytes
+bool: bool
+float: float
+
+double: double
+decimal: double
+
+number: int32
+int three two: int32
+int thirty two: int32
+
+long number: int64
+int six four: int64
+int sixty four: int64
+
+you int: uint32
+you int three two: uint32
+you int thirty two: uint32
+
+you int six four: uint64
+you int sixty four: uint64
+
+timestamp: google.protobuf.Timestamp
+duration: google.protobuf.Duration
+empty: google.protobuf.Empty
