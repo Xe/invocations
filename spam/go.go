@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log/slog"
+	"os"
 )
 
 func main() {
@@ -18,4 +19,11 @@ func main() {
 
 	slog.Debug("water water water") // this is a test
 	slog.Debug("water water water")
+
+	fin, err := os.Open("file.txt")
+
+	if err != nil {
+		return err
+	}
+	defer fin.Close()
 }

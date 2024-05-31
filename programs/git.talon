@@ -5,7 +5,7 @@ great calzone (add|ad):
 great calzone pick:
     insert("git add ")
 
-great calzone commit: 
+great calzone commit:
     insert("git commit -s")
     key(enter)
     sleep(100ms)
